@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { FiArrowLeft,FiArrowRight,FiArrowUp,FiArrowDown } from "react-icons/fi";
 
 export default function BluetoothController() {
   const [bluetoothDevice, setBluetoothDevice] = useState(null);
@@ -102,21 +103,21 @@ export default function BluetoothController() {
 
       {/* Movement Controls */}
       <div className="flex flex-col items-center mt-20">
-        <button className="bg-purple-500 p-5 w-15 rounded-md mb-6">↑</button>
+        <button className="bg-purple-500 p-5 w-15 rounded-md mb-6"><FiArrowUp/></button>
         <div className="flex items-center space-x-6">
-          <button className="bg-purple-500 p-5 rounded-md">←</button>
+          <button className="bg-purple-500 p-5 rounded-md"><FiArrowLeft/></button>
           <div className="bg-black p-8 rounded-full">
             <p className="text-white font-bold text-lg">SBR</p>
           </div>
-          <button className="bg-purple-500 p-5 rounded-md">→</button>
+          <button className="bg-purple-500 p-5 rounded-md"><FiArrowRight/></button>
         </div>
-        <button className="bg-purple-500 p-5 w-15 rounded-md mt-5">↓</button>
+        <button className="bg-purple-500 p-5 w-15 rounded-md mt-5"><FiArrowDown/></button>
       </div>
 
       {/* PID & FOPID Sections */}
-      <div className="fixed bottom-22 w-full flex">
+      <div className="fixed bottom-22 w-full flex item-justify-center ">
         <button
-          className={`flex-1 py-5 text-center font-bold rounded-lg ${activeSection === "PID" ? "bg-yellow-400 text-black" : "bg-purple-500 text-white"}`}
+          className={`flex-1 py-5  text-center font-bold rounded-lg ${activeSection === "PID" ? "bg-yellow-400 text-black" : "bg-purple-500 text-white"}`}
           onClick={() => setActiveSection(activeSection === "PID" ? null : "PID")}
         >
           Edit PID
